@@ -130,13 +130,29 @@ void prime(int n){
         cout<<"no";
     }
 }
+//wrong (lecture 7,53:33)
+void hcf(int n1, int n2){
+    cout<<"enter two number : ";
+    cin>>n1,n2;
+    int hcf=1;
+    for(int i=min(n1,n2);i>=1;i--){
+        if(n1%i == 0 && n2%i == 0){
+            hcf=i;
+            break;
+        }
+    }
+    cout<<hcf;
+}
 int main(){
    int n;
+   int n1;
+   int n2;
     //extraction(n);
     //count_digit01(n);
     //reverse_digit(n);
     //palindrome(n);
     //armstrong(n);
     //printAllDivisor02(n);
-    prime(n);
+    //prime(n);
+    hcf(n1,n2);
 }

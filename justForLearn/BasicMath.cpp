@@ -76,11 +76,67 @@ void armstrong(int n){
         cout<<"no";
     }
 }
+//O(n) 
+void printAllDivisor01(int n){
+    cout<<"enter number :";
+    cin>>n;
+    int i;
+    for(i=1;i<=n;i++){
+        if(n%i==0){
+            cout<<i<<endl;
+        }
+    }
+
+
+}
+//other way to find print all divisor(mathematical observation)
+//in place of sqrt(n),we can write i*i<=n
+//O(sqrt(n))
+void printAllDivisor02(int n){
+    cout<<"enter you digit :";
+    cin>>n;
+    vector<int> ls;
+    for(int i=1;i*i<=n;i++){
+        if(n%i == 0){
+            ls.push_back(i);
+            if((n/i)!= i){
+                ls.push_back(n/i);
+            }
+        }
+    }
+    sort(ls.begin(),ls.end());
+    for(auto it: ls){
+        cout<<it<<" ";
+    }
+
+}
+//Prime number check 
+void prime(int n){
+    cout<<"enter a number for prime check :";
+    cin>>n;
+    int count=0;
+    for(int i=1;i*i<n;i++){
+        if(n%i == 0){
+            count++;
+            if((n/i)!=i){
+                count++;
+            }
+        }
+    }
+    if(count == 2){
+        cout<<"yes";
+    }
+    else{
+        cout<<"no";
+    }
+}
 int main(){
    int n;
     //extraction(n);
     //count_digit01(n);
     //reverse_digit(n);
     //palindrome(n);
-    armstrong(n);
+    //armstrong(n);
+    //printAllDivisor02(n);
+    prime(n);
 }

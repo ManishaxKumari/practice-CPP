@@ -154,5 +154,7 @@ int main(){
     //armstrong(n);
     //printAllDivisor02(n);
     //prime(n);
-    hcf(n1,n2);
+    //hcf(n1,n2);
 }
+
+

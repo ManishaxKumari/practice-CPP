@@ -71,6 +71,6 @@ int main(){
     // printn(1,n);
     //printrev(n,n);
     //printbt(n,n);
-    revPrintbt(1,n);
+    //revPrintbt(1,n);
 
 }

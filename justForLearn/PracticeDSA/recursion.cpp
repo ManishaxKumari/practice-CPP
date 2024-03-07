@@ -39,17 +39,38 @@ void printn(int i,int n){
 //print number n time in reverse order using recursion
 
 void printrev(int i,int n){
+    if(i<1){
+        return;
+    }
+    cout<<i<<endl;
+    printrev(i-1,n);
+}
+
+// use-backtracking for print 1 to N
+void printbt(int i,int n){
+    if(i<1){
+        return;
+    }
+    printbt(i-1,n);
+    cout<<i<<endl;
+}
+
+//use-backtracking for print n to 1
+void revPrintbt(int i,int n){
     if(i>n){
         return;
     }
-    cout<<n<<endl;
-    printrev(1,n-1);
+    revPrintbt(i+1,n);
+    cout<<i<<endl;
 }
+
 int main(){
     int n;
     cout<<"enter number"<<" ";
     cin>>n;
     // printn(1,n);
-    printrev(1,n);
+    //printrev(n,n);
+    //printbt(n,n);
+    revPrintbt(1,n);
 
 }

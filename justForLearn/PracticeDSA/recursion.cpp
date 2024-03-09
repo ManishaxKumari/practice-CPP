@@ -82,16 +82,48 @@ int printsum01(int n){
     }
     return n + printsum01(n-1);
 }
+//factorial of N using functional way in recursion
+
+int printmulti(int n){
+    if(n==1){
+        return 1;
+    }
+    return n*printmulti(n-1);
+
+}
+//swap using two pointer in recursion
+void swap01(int i,int arr[],int n){
+    if(i>=n/2){
+        return;
+    }
+    swap(arr[i],arr[n-i-1]);
+    swap01(i+1,arr,n);
+  
+}
+
 
 int main(){
     int n;
-    cout<<"enter number"<<" ";
-    cin>>n;
+    // cout<<"enter number"<<" ";
+    // cin>>n;
     //printn(1,n);
     //printrev(n,n);
     //printbt(n,n);
     //revPrintbt(1,n);
     //printsum(n,0);
-    printsum01(n);
+    //cout<<printsum01(n)<<endl;
+    //cout<<printmulti(n);
+    cout<<"enter size of array";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        }
+    swap01(0,arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
 
+    }
+    
+    return 0;
 }

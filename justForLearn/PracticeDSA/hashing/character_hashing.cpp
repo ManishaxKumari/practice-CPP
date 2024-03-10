@@ -7,9 +7,12 @@ int main(){
     cin>>s;
 
     //precompute
-    int hash[26]={0};
+    // if we don't know that charter isl̥ower case or upper case then 
+    //int hash[256]={0};
+    int hash[26]={0};  
     for(int i=0;i<s.size();i++){
         hash[s[i]-'a']++ ; //s[i]-'a' is index
+        //hash[s[i]]++;
     }
 
     int q; 
@@ -20,6 +23,7 @@ int main(){
         cin>>c;
         //fetch
         cout<< hash[c-'a']<<endl;
+        //cout<<hash[c]<<endl;
     }
     return 0;
 }

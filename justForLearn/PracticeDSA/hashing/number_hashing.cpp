@@ -20,7 +20,7 @@ int main(){
     cout<<"enter number of query";
     cin>>q;
     int number;
-    while(q--){   //q-- meaning q!=0; runs the loop until t is 0 during checking it's value, since 0 is equally to false in a logical context
+    while(q--){   //q-- meaning q!=0; runs the loop until q is 0 during checking it's value, since 0 is equally to false in a logical context
         cin>>number;
         //fetch
         cout<< hash[number]<<endl;

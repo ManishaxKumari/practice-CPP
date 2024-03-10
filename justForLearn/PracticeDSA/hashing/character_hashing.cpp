@@ -11,8 +11,8 @@ int main(){
     //int hash[256]={0};
     int hash[26]={0};  
     for(int i=0;i<s.size();i++){
-        hash[s[i]-'a']++ ; //s[i]-'a' is index
-        //hash[s[i]]++;
+        hash[s[i]-'a']++ ; //s[i]-'a' is index (lower case) s[i]-'A'(upper case)
+        //hash[s[i]]++; its auto typecast inside the bracket
     }
 
     int q; 

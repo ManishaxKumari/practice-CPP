@@ -63,10 +63,6 @@ void insertion_sort(int arr[],int n){
    }
 }
 
-
-
-
-
 int main(){
     //take array from user
     int n;

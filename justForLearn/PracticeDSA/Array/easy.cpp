@@ -106,3 +106,47 @@ bool check(vector<int>& nums) {
 
        return cnt<=1;
     }
+    //move zeros
+    void moveZeroes(vector<int>& nums) {
+        int n=nums.size();
+        int j=-1;
+        for(int i=0;i<n;i++){
+            if(nums[i]==0){
+                j=i;
+                break;
+            }
+        
+        }
+        
+
+        for(int i=j+1;i<n;i++){
+            if(nums[i]!=0){
+                swap(nums[j],nums[i]);
+                j++;
+            }
+        
+        }
+        
+    }
+
+    //union array
+    vector<int> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        
+        set<int> st;
+        for(int i=0;i<n;i++){
+            st.insert(arr1[i]);
+        }
+        for(int i=0;i<m;i++){
+            st.insert(arr2[i]);
+        }
+    
+       vector<int> temp;
+        int i=0;
+        for(auto it:st){
+           temp.push_back(it);
+            
+        }
+        return temp; 
+       
+    }

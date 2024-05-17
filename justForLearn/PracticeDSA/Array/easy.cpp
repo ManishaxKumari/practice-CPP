@@ -73,5 +73,36 @@ int removeDuplicates(vector<int>& nums) {
       return i+1; 
     }
 
-//left rotate array by one place 
+//left rotate array by  k place 
+void rotate(vector<int>& nums, int k) {
+        k = k % nums.size();
+        vector<int> temp;
+        for(int i=0;i<k;i++){
+             temp.push_back(nums[i]);
+        }
 
+        for(int i=k;i<nums.size();i++){
+            nums[i-k]=nums[i];
+        }
+
+        for(int i=nums.size()-k;i<nums.size();i++){
+            nums[i]=temp[i-(nums.size()-k)];
+        }
+    }
+
+//array is sorted and rotated
+
+bool check(vector<int>& nums) {
+        int n=nums.size();
+        int cnt=0;
+        for(int i=1;i<n;i++){
+        if(nums[i-1]>=nums[i]){
+            cnt++;
+        }
+        }
+        if(nums[n-1]>nums[0]){
+            cnt++;
+        }
+
+       return cnt<=1;
+    }

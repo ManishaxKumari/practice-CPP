@@ -150,3 +150,75 @@ bool check(vector<int>& nums) {
         return temp; 
        
     }
+
+    //union array
+
+vector<int> findUnion(int a[],  int b[], int n, int m)
+    {
+        
+        int i=0;
+        int j=0;
+        vector<int> unionarr;
+        while(i<n && j<m){
+            if(a[i]<=b[j]){
+                if(unionarr.back() != a[i] || unionarr.size()==0){
+                    unionarr.push_back(a[i]);
+                }
+                i++;
+            
+            }
+            else {
+                if(unionarr.back() != b[j] || unionarr.size()==0){
+                    unionarr.push_back(b[j]);
+                }
+                j++;
+            }
+        }
+        
+        while(j<m){
+             if(unionarr.back() != b[j] || unionarr.size()==0){
+                    unionarr.push_back(b[j]);
+                }
+                j++;
+        }
+        while(i<n){
+            if(unionarr.back() != a[i] || unionarr.size()==0){
+                    unionarr.push_back(a[i]);
+                }
+            i++;
+        }
+        return unionarr;
+    }
+    //
+    bool isArraySpecial(vector<int>& nums) {
+       int i=0;
+       int j=0;
+       int n=nums.size();
+        if(n==1){
+        return true;
+        }
+       for(int i=0;i<n-1;i++){
+           for(int j=1;j<n;j++){
+               if(nums[i]%2==0 && nums[j]%2 ==0){
+                   return false;
+               }
+               else if(nums[i]%2!=0 && nums[j]%2 !=0){
+                   return false;
+               }
+              
+            
+            
+              }
+           }
+        
+            return true;
+        
+        
+           
+       }
+        
+        
+
+    
+
+    

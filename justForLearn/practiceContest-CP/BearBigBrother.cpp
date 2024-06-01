@@ -11,7 +11,6 @@ int main(){
         b=b*2;
         cnt++;
     }
-
     cout<<cnt;
     return 0;
 }

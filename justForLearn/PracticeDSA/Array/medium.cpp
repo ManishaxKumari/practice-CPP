@@ -97,4 +97,41 @@ void sortColors(vector<int>& nums) {
     }
 
     //moore voting algorithm for majority element
-    
+    int majorityElement(vector<int>& nums) {
+        int n=nums.size();
+        int cnt=0;
+        int el;
+        for(int i=0;i<n;i++){
+            if(cnt==0){
+                cnt=1;
+                el=nums[i];
+            }
+            else if(nums[i]==el){
+                cnt++;
+            }
+            else{
+                cnt--;
+            }
+        }
+        int cnt1=0;
+        for(int i=0;i<n;i++){
+           if(nums[i]==el){
+            cnt1++;
+           }
+
+        }
+        if(cnt1 > (n/2)){
+            return el;
+        }
+        return -1;
+
+    }
+
+
+    //for make code fast
+const int fast = [](){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 0;
+}();

@@ -61,7 +61,7 @@ bool sortcheck(vector<int>& nums,int n) {
        }
        return true;
     }
-
+//remove duplicates
 int removeDuplicates(vector<int>& nums) {
       int i=0;
       for(int j=1;j<nums.size();j++){

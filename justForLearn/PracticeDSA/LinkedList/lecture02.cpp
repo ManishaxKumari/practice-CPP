@@ -18,9 +18,11 @@ class Node{
         next=nullptr;
     }
     
+
+    
 };
 //convert array to LL
-Node* convertArr2LL(vector<int> &arr){ //return pointer 
+Node*convertArr2LL(vector<int> &arr){ //return pointer 
     Node* head= new Node(arr[0]);
     Node* mover=head;
     for(int i=1; i<arr.size();i++){
@@ -53,7 +55,7 @@ Node* removeHead(Node*head){
     return head;
 }
 //deletion of tail of LL
-Node* removeTail(Node*head){
+Node*removeTail(Node*head){
     if(head == NULL ||  head->next == NULL) return NULL;
     Node*temp=head;
     while(temp->next->next != NULL){
@@ -64,9 +66,39 @@ Node* removeTail(Node*head){
     return head;
 }
 
+//deletion of any k th element 
+
+Node* removeK(Node*head,int k){
+    if(head == NULL) return head;
+    if(k==1){
+        Node*temp=head;
+        head=head->next;
+        free(temp);
+        return head;
+    }
+    else{
+        int cnt=0;
+        Node*temp=head;
+        Node*prev=NULL;
+        while(temp !=NULL){
+            cnt++;
+            if(cnt==k){
+                prev->next=prev->next->next;
+                free(temp);
+                break;
+            }
+            prev=temp;
+            temp=temp->next;
+
+        }
+        return head;
+    }
+
+}
+
 int main(){
     vector<int> arr={12,5,8,7};
     Node* head=convertArr2LL(arr);
-    head=removeHead(head);
+    head=removeK(head,2);
     print(head);
 }

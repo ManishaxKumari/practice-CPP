@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//oops concept in linkedlist
 class Node{
     public:
     int data;
@@ -19,7 +19,7 @@ class Node{
     }
     
 };
-
+//convert array into linkedlist
 Node* convertArr2LL(vector<int> &arr){ //return pointer 
     Node* head= new Node(arr[0]);
     Node* mover=head;

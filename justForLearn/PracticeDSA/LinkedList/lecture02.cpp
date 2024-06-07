@@ -66,7 +66,7 @@ Node*removeTail(Node*head){
     return head;
 }
 
-//deletion of any k th element 
+//deletion of any k th element (when position given)
 
 Node* removeK(Node*head,int k){
     if(head == NULL) return head;
@@ -95,6 +95,37 @@ Node* removeK(Node*head,int k){
     }
 
 }
+
+//deletion of value 
+Node* removeK(Node*head,int el){
+    if(head == NULL) return head;
+    if(head->data==el){
+        Node*temp=head;
+        head=head->next;
+        free(temp);
+        return head;
+    }
+    else{
+        Node*temp=head;
+        Node*prev=NULL;
+        while(temp !=NULL){
+            if(temp->data==el){
+                prev->next=prev->next->next;
+                free(temp);
+                break;
+            }
+            prev=temp;
+            temp=temp->next;
+
+        }
+        return head;
+    }
+
+}
+
+//insertion of head 
+
+
 
 int main(){
     vector<int> arr={12,5,8,7};

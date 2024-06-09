@@ -152,17 +152,50 @@ Node* inserttal(Node* head ,int val){
 }
 
 //insert at any k position (k -> n-(n+1))
-Node* insertk(Node* head,int val, int k){
+Node* insertk(Node* head,int el, int k){
     if(head == NULL){
-         return new Node(val);
+         if(k==1) return new Node(el);
+         else return NULL;
     }
-    if(val == 1){
-        return new Node(val,head);
+    if(k==1){
+        Node* temp=new Node(el,head);
+        return temp;
     }
-    if 
+    int cnt=0;
+    Node* temp =head;
+    while(temp != NULL){
+        cnt++;
+       if(cnt == k-1) {
+        Node* x= new Node(el,temp->next);
+        temp->next= x;
+        break;
+       }
+       temp =temp->next;
+    }
+    return head;
 }
 
+//insert element before the value x
+Node* insertval(Node* head,int el, int val){
+    if(head == NULL){
+        return NULL;
+    }
+    if(head->data == val){
+        Node* temp=new Node(el,head);
+        return temp;
+    }
 
+    Node* temp =head;
+    while(temp->next != NULL){
+       if(temp->next->data == val) {
+        Node* x= new Node(el,temp->next);
+        temp->next= x;
+        break;
+       }
+       temp =temp->next;
+    }
+    return head;
+}
 
 
 int main(){

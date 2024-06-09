@@ -2,7 +2,12 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

@@ -97,7 +97,8 @@ Node* removeK(Node*head,int k){
 }
 
 //deletion of value 
-Node* removeK(Node*head,int el){
+
+Node* removeK1(Node*head,int el){
     if(head == NULL) return head;
     if(head->data==el){
         Node*temp=head;
@@ -123,13 +124,51 @@ Node* removeK(Node*head,int el){
 
 }
 
+//deleting any node if head is not given but only node is given 
+ void deleteNode(Node* node) {
+        node->data=node->next->data;
+        node->next=node->next->next;
+    }  
+
 //insertion of head 
+Node* inserthead(Node* head,int val){
+    Node* temp = new Node(val ,head);
+    return temp;
+    //return new node(val,head);
+}
+
+//insert at last 
+Node* inserttal(Node* head ,int val){
+    if (head == NULL){
+        return new Node(val);
+    }
+    Node* temp =head;
+    while(temp->next !=NULL){
+        temp = temp->next;
+    }
+    Node* newNode= new Node(val);
+    temp->next =newNode;
+    return head;
+}
+
+//insert at any k position (k -> n-(n+1))
+Node* insertk(Node* head,int val, int k){
+    if(head == NULL){
+         return new Node(val);
+    }
+    if(val == 1){
+        return new Node(val,head);
+    }
+    if 
+}
+
 
 
 
 int main(){
     vector<int> arr={12,5,8,7};
     Node* head=convertArr2LL(arr);
-    head=removeK(head,2);
+    head=inserttal(head , 100);
+    //head =new Node(100,head); // direct without create function
     print(head);
 }

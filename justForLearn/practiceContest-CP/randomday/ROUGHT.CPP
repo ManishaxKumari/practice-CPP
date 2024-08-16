@@ -1,5 +1,3 @@
-// https://codeforces.com/problemset/problem/1391/B
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,30 +9,32 @@ int main()
     {
         int n, m;
         cin >> n >> m;
-        char str[n + 1][m + 1];
+        char str[n][m];
         int x = 0, y = 0;
-        for (int i = 1; i <= n; i++)
+        for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j <= m; j++)
+            for (int j = 0; j < m; j++)
             {
                 cin >> str[i][j];
             }
         }
 
-        for (int i = 1; i <= n - 1; i++)
+        for (int i = 0; i < n - 1; i++)
         {
-            if (str[i][m - 1] != 'D')
+            if (str[i][m - 1] == 'R')
             {
                 x++;
             }
         }
-        for (int j = 1; j <= m - 1; j++)
+
+        for (int j = 0; j < m - 1; j++)
         {
-            if (str[n - 1][j] != 'R')
+            if (str[n - 1][j] == 'D')
             {
                 y++;
             }
         }
+
         cout << x + y << endl;
     }
 }

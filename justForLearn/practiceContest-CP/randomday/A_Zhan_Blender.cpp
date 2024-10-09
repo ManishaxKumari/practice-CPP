@@ -1,21 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+void solve(){
+    int n;
+    cin>>n;
+    int x,y;
+    cin>>x>>y;
+    int b=min(x,y);
+    int ans;
+    if(n%b==0){
+        ans=n/b;
+    }
+    else ans=n/b + 1;
+    cout<<ans<<endl;
+}
+
+
+
 int main(){
     int t;
     cin>>t;
-    while(t--){
-        int n;
-        cin>>n;
-        int bps,zps;
-        cin>>bps>>zps;
-        long long sec=0;
-        long long eff=min(bps,zps);
-        while(n>0){
-            n=n-eff;
-            sec++;
-        }
-        cout<<sec<<endl;
-
-    }
+    while(t--) solve();
+    return 0;
 }
